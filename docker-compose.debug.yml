@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  advancedblog:
+    image: advancedblog
+    volumes: 
+      - ./AdvancedBlog:/app
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    ports:
+      - 8000:8000
+      - 5678:5678
+    environment:
+      - SECRET_KEY=django-insecure-!h2@hi)b4l^3l=t9b209qk9)rvkrqlwwa0q25ms6oyi9@csj=u
+      - DEBUG=TRUE
