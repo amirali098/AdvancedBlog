@@ -1,6 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
-
+User=get_user_model()
 '''
 Define Post Class
 '''
@@ -17,7 +18,7 @@ class Post(models.Model):
     '''
     title=models.CharField( max_length=255)
     content=models.CharField( max_length=50)
-    author=models.CharField( max_length=50)
+    author=models.ForeignKey(User,on_delete=models.CASCADE)
     status=models.BooleanField()
     category=models.ForeignKey("Category", on_delete=models.SET_NULL,null=True)
     image=models.ImageField(blank=True,null=True)
@@ -35,3 +36,5 @@ class Post(models.Model):
 
     # def get_absolute_url(self):
     #     return reverse("_detail", kwargs={"pk": self.pk})
+
+

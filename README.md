@@ -3,7 +3,7 @@
 A practice project built with Django to improve skills in web development and backend management.
 
 ## 🚀 Features
-- User authentication (signup, login, logout)
+<!-- - User authentication (signup, login, logout) -->
 - Custom user model
 - User roles & permissions
 - CRUD operations
